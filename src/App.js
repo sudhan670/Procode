@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ExpertProfile from "./Components/ExpertProfile";
+import TimeSlot from "./Components/TimeSlot";
+import BookingModal from "./Components/BookingModal";
+import expertData from "./data/expertData.json";
+import "./styles/App.scss";
 
 function App() {
+  const [selectedSlot, setSelectedSlot] = useState(null);
+
+  const handleSlotSelection = (slot) => {
+    setSelectedSlot(slot);
+  };
+
+  const closeBookingModal = () => {
+    setSelectedSlot(null);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <ExpertProfile expert={expertData.expert} />
+      <TimeSlot
+        timeSlots={expertData.expert.timeSlots}
+        onSelectSlot={handleSlotSelection}
+      />
+      {selectedSlot && (
+        <BookingModal slot={selectedSlot} onClose={closeBookingModal} />
+      )}
     </div>
   );
 }

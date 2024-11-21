@@ -1,0 +1,31 @@
+{
+    "expert": {
+        "id": 1,
+        "name": "Dr. Jane Smith",
+        "title": "AI & ML Expert",
+        "bio": "Dr. Jane Smith is a renowned AI & ML industry expert with over 10 years of experience in cutting-edge technology and research.",
+        "image": "https://via.placeholder.com/150",
+        "timeSlots": [
+            {
+                "id": 1,
+                "time": "09:00 AM - 09:30 AM",
+                "available": true
+            },
+            {
+                "id": 2,
+                "time": "10:00 AM - 10:30 AM",
+                "available": false
+            },
+            {
+                "id": 3,
+                "time": "11:00 AM - 11:30 AM",
+                "available": true
+            },
+            {
+                "id": 4,
+                "time": "01:00 PM - 01:30 PM",
+                "available": true
+            }
+        ]
+    }
+}
